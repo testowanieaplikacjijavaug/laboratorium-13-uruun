@@ -17,6 +17,9 @@ public class ArmstrongSteps extends Steps
     }
 
     @Then("liczba Armstronga - $bool")
+    @Aliases(values={
+            "liczba jest Armstronga - $bool",
+            "Armstrong - $bool"})
     public void liczbaJestArmstronga(@Named("bool") boolean bool)
     {
         assertEquals(function.calc(), bool);
