@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
+import jbehave.steps.ArmstrongSteps;
 import jbehave.steps.QuadraticFunctionSteps;
 import org.jbehave.core.configuration.Configuration;
 import org.jbehave.core.configuration.MostUsefulConfiguration;
@@ -23,7 +24,7 @@ import org.jbehave.core.steps.InstanceStepsFactory;
  * @author funktapuss
  *
  */
-public class QuadraticFunctionStories extends JUnitStories {
+public class BindStories extends JUnitStories {
 
     @Override
     public Configuration configuration(){
@@ -33,7 +34,7 @@ public class QuadraticFunctionStories extends JUnitStories {
 
     @Override
     protected List<String> storyPaths() {
-        String path = "Stories/**/*.story";
+        String path = "Stories/*.story";
         return new StoryFinder().findPaths(CodeLocations.codeLocationFromPath("").getFile(),
                 Collections.singletonList(path),
                 new ArrayList<String>(), "file:");
@@ -41,7 +42,7 @@ public class QuadraticFunctionStories extends JUnitStories {
 
     @Override
     public InjectableStepsFactory stepsFactory(){
-        return new InstanceStepsFactory(configuration(), new QuadraticFunctionSteps());
+        return new InstanceStepsFactory(configuration(), new QuadraticFunctionSteps(),  new ArmstrongSteps());
     }
 
     private StoryReporterBuilder getReporter(){

@@ -1,7 +1,6 @@
 package jbehave;
-import java.io.Serializable;
 
-public class QuadraticFunction implements Serializable {
+public class QuadraticFunction {
 
     private double a;
     private double b;
@@ -20,15 +19,6 @@ public class QuadraticFunction implements Serializable {
     public void setC(double value)
     {
         c = value;
-    }
-    public double getA() {
-        return a;
-    }
-    public double getB() {
-        return b;
-    }
-    public double getC() {
-        return c;
     }
     public double getX1() {
         return x1;
@@ -59,55 +49,7 @@ public class QuadraticFunction implements Serializable {
             x1 = x2 = -b / (2 * a);
         }
         else {
-            throw new IllegalArgumentException("No real solution for these parameters");
+            throw new IllegalArgumentException();
         }
     }
-
-    @Override
-    public String toString()
-    {
-        if(a != 0)
-        {
-            if(b != 0)
-            {
-                if(c != 0)
-                {
-                    return a + "x^2 + " + b + "x + " + c + " = 0";
-                }
-                else
-                    return a + "x^2 + " + b + "x" + " = 0";
-            }
-            else
-            {
-                if(c != 0)
-                {
-                    return a + "x^2 + " + c + " = 0";
-                }
-                else
-                    return a + "x^2 = 0";
-            }
-        }
-        else
-        {
-            if(b != 0)
-            {
-                if(c != 0)
-                {
-                    return b + "x + " + c + " = 0";
-                }
-                else
-                    return b + "x = 0";
-            }
-            else
-            {
-                if(c != 0)
-                {
-                    return c + " = 0";
-                }
-                else
-                    return "0 = 0";
-            }
-        }
-    }
-
 }
