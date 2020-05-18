@@ -33,7 +33,7 @@ public class QuadraticFunctionStories extends JUnitStories {
 
     @Override
     protected List<String> storyPaths() {
-        String path = "stories/**/*.story";
+        String path = "Stories/**/*.story";
         return new StoryFinder().findPaths(CodeLocations.codeLocationFromPath("").getFile(),
                 Collections.singletonList(path),
                 new ArrayList<String>(), "file:");
